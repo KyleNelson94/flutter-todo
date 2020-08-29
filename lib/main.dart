@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:notes/models/global.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Notes App',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -53,11 +53,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     color: Colors.lightGreen,
                   ),
+                  new Container(
+                      child: Center(
+                    child: FlatButton(
+                      color: Colors.orange,
+                      child: Text("Hello"),
+                      onPressed: () {},
+                    ),
+                  ))
                 ],
               ),
               Container(
                 padding: EdgeInsets.only(left: 50),
-                height: 160,
+                height: 180,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
@@ -67,11 +75,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      "Intray",
-                    ),
+                    Text("Intray Section", style: trayTitleStyle),
                     Container()
                   ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(
+                    top: 140,
+                    left: (MediaQuery.of(context).size.width - 80) / 2),
+                width: 80,
+                height: 80,
+                child: FittedBox(
+                  child: FloatingActionButton(
+                    child: Icon(Icons.add),
+                    backgroundColor: Colors.red,
+                    onPressed: () {},
+                  ),
                 ),
               ),
               Container(
